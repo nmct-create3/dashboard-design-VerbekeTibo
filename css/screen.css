@@ -397,6 +397,10 @@ input::placeholder {
   background-color: var(--color-neutral-xxx-dark);
   width: 260px;
   grid-column: 1/ span 1;
+  color: var(--color-white) ;
+  font-weight: 700;
+  
+  
 }
 .c-app__topbar {
     background-color: var(--color-white);
