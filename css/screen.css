@@ -1,6 +1,76 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 'black';
+  src: url('../fonts/SourceSansPro-Black.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 800;
+  src: url('../fonts/SourceSansPro-Black.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  src: url('../fonts/SourceSansPro-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  src: url('../fonts/SourceSansPro-BoldItalic.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  src: url('../fonts/SourceSansPro-SemiBold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  src: url('../fonts/SourceSansPro-SemiBoldItalic.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 'normal';
+  src: url('../fonts/SourceSansPro-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  src: url('../fonts/SourceSansPro-Italic.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  src: url('../fonts/SourceSansPro-Light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  src: url('../fonts/SourceSansPro-LightItalic.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 200;
+  src: url('../fonts/SourceSansPro-ExtraLight.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 200;
+  src: url('../fonts/SourceSansPro-ExtraLightItalic.ttf') format('ttf');
+}
 
 /*------------------------------------*\
 #Variables
@@ -8,12 +78,21 @@
 
 :root {
   /* colors */
-  --color-alpha-light: MEDIUMSLATEBLUE;
-  --color-alpha: SLATEBLUE;
+  --color-beta: MEDIUMSLATEBLUE;
 
-  --color-neutral-light: LIGHTSLATEGRAY;
-  --color-neutral: SLATEGRAY;
-  --color-neutral-dark: DARKSLATEGRAY;
+  --color-alpha: #a3a0fb;
+
+  --color-white:#fff;
+
+  --color-neutral-xxxx-light: #f0f0f7;
+  --color-neutral-xxx-light: #ebebf2;
+  --color-neutral-xx-light: #d7dae2;
+  --color-neutral-x-light: #bcbccb;
+  --color-neutral: #a5a4bf;
+  --color-neutral-dark: #808495;
+  --color-neutral-x-dark: #4d4f5c;
+  --color-neutral-xx-dark: #43425d;
+  --color-neutral-xxx-dark: #3b3b53;
 
   /* Shadows */
 
@@ -21,6 +100,16 @@
 
   /* transitions */
   --transition-alpha: 0.1s;
+
+  /* whitepace */
+
+  --global-baseline: 5px;
+  --global-whitespase-xxs: var(--global-baseline); /* = 5px*/
+  --global-whitespase-xs: calc(var(--global-baseline) * 2); /* = 10px*/
+  --global-whitespase-sm: calc(var(--global-baseline) * 3); /* = 15px*/
+  --global-whitespase-md: calc(var(--global-baseline) * 4); /* = 20px*/
+  --global-whitespase-lg: calc(var(--global-baseline) * 5); /* = 25px*/
+  --global-whitespase-sm: calc(var(--global-baseline) * 6); /* = 30px*/
 }
 
 /*------------------------------------*\
@@ -36,12 +125,12 @@
 html {
   font-size: 15px;
   line-height: 1.5;
-  font-family: Helvetica, arial, sans-serif;
-  color: var(--color-neutral-dark);
+  font-family: 'Source Sans Pro', arial, sans-serif;
+  color: var(--color-neutral-xx-dark);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: var(--color-neutral-xxxx-light);
 }
 
 *,
@@ -98,20 +187,21 @@ h3 {
 
 h1 {
   font-size: 36px;
-  line-height: 48px;
-  margin: 0 0 24px;
+  line-height: calc(var(--global-baseline) * 10);
+  margin: 0 0 var(--global-whitespase-md);
 }
 
 h2 {
-  font-size: 32px;
-  line-height: 40px;
-  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: calc(var(--global-baseline) * 8);
+  margin: 0 0 var(--global-whitespase-lg);
 }
 
 h3 {
   font-size: 26px;
-  line-height: 32px;
-  margin: 0 0 24px;
+  line-height: calc(var(--global-baseline) * 6);
+  margin: 0 0 var(--global-whitespase-md);
 }
 
 h4,
@@ -119,8 +209,8 @@ h5,
 h6 {
   font-size: 16px;
   font-weight: 600;
-  line-height: 24px;
-  margin: 0 0 24px;
+  line-height: calc(var(--global-baseline) * 5);
+  margin: 0 0 var(--global-whitespase-md);
 }
 
 p,
@@ -130,7 +220,7 @@ dl,
 table,
 address,
 figure {
-  margin: 0 0 24px;
+  margin: 0 0 var(--global-whitespase-md);
 }
 
 ul,
@@ -293,7 +383,25 @@ input::placeholder {
     Component: Logo
     ---
     Website main logo
+    
 */
+.c-app {
+    background-color: var(--color-neutral-xx-light);
+    min-height: 100vh;
+    gr
+}
+.c-app__logo {
+  background-color: var(--color-neutral-xxx-dark);
+}
+.c-app__topbar {
+    background-color: var(--color-white);
+}
+.c-app__sidebar {
+    background-color: var(--color-neutral-xx-dark);
+}
+.c-app__main {
+    background-color: var(--color-neutral-xx-light);
+}
 
 /*------------------------------------*\
 #UTILITIES
